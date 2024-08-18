@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Courier New', Courier, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +8,45 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.header{
+  background-color: #ffbb83;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.formBar{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+.formBar input{
+  width: 30%;
+  font-family: 'Courier New', Courier, monospace;
+  border-width: 2px;
+}
+
+.formBar button{
+  width: 10%;
+  background-color: rgb(255, 208, 190);
+  padding:0px 10px;
+  margin-left: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  border-color:rgb(0, 0, 0);
+  border-width: 2px;
+}
+
+.formBar button:hover{
+  background-color: rgb(118, 34, 0);
+  color: white;
+  border-color: rgb(255, 152, 118);
 }

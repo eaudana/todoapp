@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 export default function ToDoList() {
 
-    const [task, setTask] = useState(["Task 1", "Task 2", "Task 3"]);
+    const [task, setTask] = useState([]);
     const [newTask, setNewTask] = useState("");
 
     //Without this function the user wont be able to type in the task.
@@ -18,21 +18,27 @@ export default function ToDoList() {
     }
 
     function addTask() {
-
+        //
+        if (newTask.trim() !== "") {
+            setTask(t => [...t, newTask]);
+            setNewTask("");
+        }
+        else {
+            alert("Please add a task");
+        }
     }
 
-    function deleteTask() {
-
+    function deleteTask(index) {
+        const updatedTasks = task.filter((_, i) => i !== index);
+        setTask(updatedTasks);
     }
 
-    function addTask() {
-        setTask(t => [...t, newTask]);
-    }
+
 
 
     return (
         <div>
-            <form>
+            <form className='formBar' >
                 <input type="text" placeholder="Add a task..."
                     value={newTask}
                     onChange={handleInputChange} />
