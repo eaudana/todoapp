@@ -25,8 +25,12 @@ code {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  margin-bottom: 50px;
 }
 
+button{
+  cursor: pointer;
+}
 
 .formBar input{
   width: 30%;
@@ -49,4 +53,60 @@ code {
   background-color: rgb(118, 34, 0);
   color: white;
   border-color: rgb(255, 152, 118);
+  
 }
+
+/* .displaySection ol{
+  background-color: rgb(255, 156, 85);
+} */
+
+
+
+.displaySection ol{
+  width:50%;
+  margin: 0 auto;
+}
+
+/* .taskName span,.taskName select,.taskName button{
+  
+  margin-right:15px;
+} */
+
+.delete-btn{
+  background-color: rgba(255, 0, 0, 0.658);
+  padding:0px 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  border-color:rgb(0, 0, 0);
+  border-width: 2px;
+  font-size: 15px;
+}
+
+select{
+  font-family: 'Courier New', Courier, monospace;
+  border-width: 2px;
+}
+
+.taskName {
+  display: flex;
+  align-items: center; /* Aligns items vertically in the center */
+  justify-content: space-between; /* Ensures equal space between elements */
+  padding: 10px; /* Adds space around each list item */
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  background-color: #ffdfa7; /* Optional: Adds a background color to tasks */
+  /* Optional: Adds a border between tasks */
+}
+
+.taskName span {
+  flex-grow: 1; /* Allows the text to take up available space */
+}
+
+.delete-btn {
+  margin-left: 10px; /* Adds space between the select and delete button */
+}
+
+
+
+
+
