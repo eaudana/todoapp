@@ -174,7 +174,7 @@ export default function ToDoList() {
                             <option value="In Progress">In Progress</option>
                             <option value="Completed">Completed</option>
                         </select>
-                        <button onClick={() => deleteTask(index)} aria-label="Delete task" className='delete-btn'>Delete</button>
+                        <button onClick={() => deleteTask(index)}  className='delete-btn'>Delete</button>
                     </li>
                 ))}
             </ol>
