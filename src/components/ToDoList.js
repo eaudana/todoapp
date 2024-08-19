@@ -84,8 +84,16 @@
 import { useState, useEffect } from 'react';
 
 export default function ToDoList() {
+
+    //The text typed on the input field is stored in the newTask state.Once the submit button is clicked the addNewTask function is called and addded to the tasks list.
+
+    //Stores the list of task
     const [tasks, setTasks] = useState([]);
+    
+    //Stores the value of the new task that the user types into the input field before adding it to the list
     const [newTask, setNewTask] = useState("");
+
+    //Stores the text entered into the search bar
     const [searchItem, setSearchItem] = useState("");
 
     useEffect(() => {
@@ -151,7 +159,7 @@ export default function ToDoList() {
                     onChange={handleInputChange}
 
                 />
-                <button type="submit" aria-label="Add task">Add Task</button>
+                <button type="submit" >Add Task</button>
             </form>
             <input
             className='searchBar'
