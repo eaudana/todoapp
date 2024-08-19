@@ -86,6 +86,7 @@ import { useState, useEffect } from 'react';
 export default function ToDoList() {
     const [tasks, setTasks] = useState([]);
     const [newTask, setNewTask] = useState("");
+    const [searchItem, setSearchItem] = useState("");
 
     useEffect(() => {
         console.log('Tasks:', tasks);
@@ -105,20 +106,24 @@ export default function ToDoList() {
         if (status === 'In Progress') {
             selectElement.style.backgroundColor = 'yellow';
             selectElement.style.color = 'black';
-            
+
         } else if (status === 'Completed') {
             selectElement.style.backgroundColor = 'green';
             selectElement.style.color = 'white';
-            
+
         }
         setTasks(newTasks);
+    }
+
+    function handleSearchChange(event) {
+        setSearchItem(event.target.value);
     }
 
 
     function addTask(event) {
         event.preventDefault();  // Prevent form submission
         if (newTask.trim() !== "") {
-            setTasks(t => [...t, { text: newTask, status: "In Progress" }]);  // Store task as an object
+            setTasks(t => [...t, { text: newTask, status: "In Progress" }]);  
             setNewTask("");
         } else {
             alert("Please add a task");
@@ -131,6 +136,11 @@ export default function ToDoList() {
         setTasks(updatedTasks);
     }
 
+
+    const filteredTasks = tasks.filter(task =>
+        task.text.toLowerCase().includes(searchItem.toLowerCase())
+    );
+
     return (
         <div className='displaySection'>
             <form className='formBar' onSubmit={addTask}>
@@ -139,19 +149,27 @@ export default function ToDoList() {
                     placeholder="Add a new task..."
                     value={newTask}
                     onChange={handleInputChange}
-                    aria-label="Task input"
+
                 />
                 <button type="submit" aria-label="Add task">Add Task</button>
             </form>
+            <input
+            className='searchBar'
+                type="text"
+                placeholder="Search tasks..."
+                value={searchItem}
+                onChange={handleSearchChange}
+
+            />
             <ol>
-                {tasks.map((task, index) => (
+                {filteredTasks.map((task, index) => (
                     <li key={index} className='taskName'>
                         <span>{task.text}</span>
 
                         <select
                             onChange={(e) => handleStatusChange(index, e.target.value)}
                             value={task.status}
-                            aria-label="Task status"
+
                         >
                             <option value="In Progress">In Progress</option>
                             <option value="Completed">Completed</option>

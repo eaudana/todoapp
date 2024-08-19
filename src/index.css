@@ -106,6 +106,13 @@ select{
   margin-left: 10px; /* Adds space between the select and delete button */
 }
 
+.searchBar{
+  margin-bottom: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  border-color: black;
+  border-width: 2px;
+}
+
 
 
 
